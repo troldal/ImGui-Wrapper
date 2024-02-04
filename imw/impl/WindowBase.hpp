@@ -45,9 +45,6 @@ namespace imw
 
         void render()
         {
-            ImGui::SetNextWindowSize(m_size);
-            ImGui::SetNextWindowPos(m_pos);
-
             ImGui::Begin(m_windowName.data(), nullptr, m_flags);
 
             static_cast< DERIVED& >(*this).exec();

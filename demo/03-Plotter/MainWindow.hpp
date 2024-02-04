@@ -17,8 +17,8 @@ class MainWindow : public imw::WindowBase< MainWindow >
     using BASE = imw::WindowBase< MainWindow >;
     friend BASE;
 
-    constexpr static auto window_size = ImVec2(1280.0F, 720.0F);
-    constexpr static auto window_pos  = ImVec2(0.0F, 0.0F);
+    //constexpr static auto window_size = ImVec2(1280.0F, 720.0F);
+    //constexpr static auto window_pos  = ImVec2(0.0F, 0.0F);
 
     bool sinSelected = false;
     bool cosSelected = false;
@@ -34,6 +34,9 @@ public:
 private:
     void exec()
     {
+        ImGui::SetNextWindowSize(m_size);
+        ImGui::SetNextWindowPos(m_pos);
+
         if (ImGui::Checkbox("sin(x)", &sinSelected))
             plot.setSinSelected(sinSelected);
 

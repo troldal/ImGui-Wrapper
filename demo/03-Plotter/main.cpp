@@ -5,6 +5,8 @@ int main(int, char**)
 {
     auto window = MainWindow { "MyWindow" };
     window.setFlags(ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoMove | ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_NoScrollbar);
+    //window.setFlags(ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_NoScrollbar);
+
     window.setSize(ImVec2(1280.0F, 720.0F));
     window.setPos(ImVec2(0.0F, 0.0F));
 

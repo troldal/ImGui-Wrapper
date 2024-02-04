@@ -13,7 +13,7 @@ class Plot : public imw::PlotBase< Plot >
     using BASE = imw::PlotBase< Plot >;
     friend BASE;
 
-    static constexpr auto num_points = 5'000;
+    static constexpr auto num_points = 10'000;
     static constexpr auto x_min      = -100.0;
     static constexpr auto x_max      = 100.0;
 
@@ -45,6 +45,7 @@ private:
                 x += x_step;
             }
 
+            //ImPlot::SetNextLineStyle(IMPLOT_AUTO_COL, 10);
             const auto plot_label = fmt::format("##function{}", static_cast< int >(1));
             ImPlot::PlotLine(plot_label.data(), xs.data(), ys.data(), num_points, 0);
         }
@@ -57,6 +58,7 @@ private:
                 x += x_step;
             }
 
+            //ImPlot::SetNextLineStyle(IMPLOT_AUTO_COL, 10);
             const auto plot_label = fmt::format("##function{}", static_cast< int >(2));
             ImPlot::PlotLine(plot_label.data(), xs.data(), ys.data(), num_points, 0);
         }

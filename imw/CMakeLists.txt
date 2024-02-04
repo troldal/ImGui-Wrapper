@@ -10,12 +10,9 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 
 find_package(fmt CONFIG REQUIRED)
 find_package(glfw3 CONFIG REQUIRED)
-find_package(imgui CONFIG REQUIRED)
-find_package(implot CONFIG REQUIRED)
 find_package(OpenGL REQUIRED)
 
-add_library(BoostTE INTERFACE IMPORTED)
-target_include_directories(BoostTE SYSTEM INTERFACE $<BUILD_INTERFACE:${CMAKE_CURRENT_LIST_DIR}/external/>)
+add_subdirectory(external)
 
 add_library(ImGuiWrapper INTERFACE)
 target_include_directories(ImGuiWrapper INTERFACE $<BUILD_INTERFACE:${CMAKE_CURRENT_LIST_DIR}>)
